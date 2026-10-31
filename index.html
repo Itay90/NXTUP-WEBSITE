@@ -2,6 +2,7 @@
 <html><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="founders-data.js"></script>
 <script src="assets/js/dc-runtime.js"></script>
 </head>
 <body>
@@ -453,8 +454,8 @@
           <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.16em;">ON STAGE</span>
           <div style="display: flex; flex-wrap: wrap; gap: 8px;">
             <span style="font-weight: 700; font-size: 15px; border: 1.5px solid #0A0B0C; padding: 9px 14px; border-radius: 999px;">Janina &amp; Lucas Glavaš · beyond-bot.ai</span>
-            <span style="font-weight: 700; font-size: 15px; border: 1.5px solid #0A0B0C; padding: 9px 14px; border-radius: 999px;">Luca Ceccarelli · HERENCIA</span>
-            <span style="font-weight: 700; font-size: 15px; border: 1.5px solid #0A0B0C; padding: 9px 14px; border-radius: 999px;">Salva Jovells · Clino</span>
+            <a href="founder.html?f=luca-ceccarelli" style="color: #0A0B0C; font-weight: 700; font-size: 15px; border: 1.5px solid #0A0B0C; padding: 9px 14px; border-radius: 999px;" style-hover="background: #0A0B0C; color: #9BE8B4;">Luca Ceccarelli · HERENCIA ↗</a>
+            <a href="founder.html?f=salva-jovells" style="color: #0A0B0C; font-weight: 700; font-size: 15px; border: 1.5px solid #0A0B0C; padding: 9px 14px; border-radius: 999px;" style-hover="background: #0A0B0C; color: #9BE8B4;">Salva Jovells · Clino ↗</a>
           </div>
         </div>
         <a class="nx-event-cta" href="#event" style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-weight: 900; font-size: 22px; letter-spacing: -0.02em; color: #9BE8B4; background: #0A0B0C; padding: 22px 28px; border-radius: 999px;" style-hover="background: #2A2C2F; color: #9BE8B4;">Register now <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px;">→</span></a>
@@ -473,84 +474,19 @@
       </div>
       <span class="nx-swipe-hint" style="display: none; margin: -16px 0 18px; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 11px; letter-spacing: 0.16em; color: rgba(245,240,232,0.55);">SWIPE →</span>
       <div class="nx-founders" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 20px;">
-        
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
+        <sc-for list="{{ founders }}" as="f">
+          <a href="founder.html?f={{ f.slug }}" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
             <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/dr-rebekka-hofmann.jpg" alt="Dr. Rebekka Hofmann" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; filter: grayscale(1) contrast(1.05);">
+              <img src="{{ f.img }}" alt="{{ f.name }}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{ f.pos }}; display: block; filter: grayscale(1) contrast(1.05);">
             </div>
             <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">CEO @ HLTHY</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Dr. Rebekka Hofmann</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">Turning smartwatch data into real preventive care.</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">{{ f.role }}</span>
+              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">{{ f.name }}</span>
+              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">{{ f.line }}</span>
               <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
             </div>
           </a>
-        
-
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
-            <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/viktor-redecker.jpg" alt="Viktor Redecker" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; filter: grayscale(1) contrast(1.05);">
-            </div>
-            <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">FOUNDER @ PAPIRIA</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Viktor Redecker</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">Ending document chaos and missed deadlines.</span>
-              <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
-            </div>
-          </a>
-        
-
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
-            <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/giulio-novelli.jpg" alt="Giulio Novelli" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; filter: grayscale(1) contrast(1.05);">
-            </div>
-            <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">FOUNDER @ CLOSEWISE</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Giulio Novelli</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">AI reconciliation for hospitality venues.</span>
-              <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
-            </div>
-          </a>
-        
-
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
-            <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/edoardo-darpa.jpg" alt="Edoardo D’Arpa" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; display: block; filter: grayscale(1) contrast(1.05);">
-            </div>
-            <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">FOUNDER @ FARORISK</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Edoardo D’Arpa</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">Fast supply-chain risk intelligence for mid-market companies.</span>
-              <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
-            </div>
-          </a>
-        
-
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
-            <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/luca-ceccarelli.jpg" alt="Luca Ceccarelli" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; filter: grayscale(1) contrast(1.05);">
-            </div>
-            <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">GM @ HERENCIA</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Luca Ceccarelli</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">PUPILYX: a low-cost digital test for early brain changes.</span>
-              <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
-            </div>
-          </a>
-        
-
-          <a href="#founders" style="display: flex; flex-direction: column; color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px; overflow: hidden;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
-            <div class="nx-founder-img" style="aspect-ratio: 4 / 4.4; background: #1E2022; overflow: hidden;">
-              <img src="assets/img/salva-jovells.jpg" alt="Salva Jovells" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 8%; display: block; filter: grayscale(1) contrast(1.05);">
-            </div>
-            <div style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #9BE8B4;">FOUNDER @ CLINO</span>
-              <span class="nx-founder-name" style="font-weight: 900; font-size: 28px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Salva Jovells</span>
-              <span style="font-family: 'Instrument Serif', serif; font-size: 19px; line-height: 1.25; color: rgba(245,240,232,0.78);">Hiring household help legally, without the paperwork.</span>
-              <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">VIEW PROFILE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
-            </div>
-          </a>
-        
+        </sc-for>
       </div>
     </div>
   </section>
@@ -684,14 +620,7 @@ class Component extends DCLogic {
     setTimeout(go, 500);
   }
   renderVals() {
-    const founders = [
-      { name: 'Dr. Rebekka Hofmann', company: 'CEO @ HLTHY', line: 'Turning smartwatch data into real preventive care.', img: './img/assets-speakers-rebekka.jpg', pos: '50% 20%', href: '#founders' },
-      { name: 'Viktor Redecker', company: 'FOUNDER @ PAPIRIA', line: 'Ending document chaos and missed deadlines.', img: './img/assets-speakers-viktor.jpg', pos: '50% 20%', href: '#founders' },
-      { name: 'Giulio Novelli', company: 'FOUNDER @ CLOSEWISE', line: 'AI reconciliation for hospitality venues.', img: './img/assets-speakers-giulio.jpg', pos: '50% 20%', href: '#founders' },
-      { name: 'Edoardo D’Arpa', company: 'FOUNDER @ FARORISK', line: 'Fast supply-chain risk intelligence for mid-market companies.', img: './img/assets-speakers-edoardo.jpg', pos: '50% 20%', href: '#founders' },
-      { name: 'Luca Ceccarelli', company: 'GM @ HERENCIA', line: 'PUPILYX: a low-cost digital test for early brain changes.', img: './img/assets-speaker-luca.jpg', pos: '50% 30%', href: '#founders' },
-      { name: 'Salva Jovells', company: 'FOUNDER @ CLINO', line: 'Hiring household help legally, without the paperwork.', img: './img/assets-speaker-salva.jpg', pos: '50% 8%', href: '#founders' }
-    ];
+    const founders = window.NXTUP_FOUNDERS || [];
     return {
       founders,
       email: this.state.email,
