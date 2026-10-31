@@ -285,8 +285,9 @@
   .nx-menu-btn, .nx-mobile-menu { display: none; }
   .nx-menu-btn { align-items: center; justify-content: center; height: 42px; padding: 0 16px; border-radius: 999px; border: 1.5px solid rgba(245,240,232,0.45); background: transparent; color: #F5F0E8; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .nx-founders::-webkit-scrollbar { display: none; }
+  section[id] { scroll-margin-top: 72px; }
 
-  @media (max-width: 720px) {
+  @media (max-width: 900px) {
     /* Header: one compact row + dropdown menu */
     .nx-header-row { flex-wrap: nowrap !important; padding: 12px 20px !important; gap: 12px !important; }
     .nx-logo-word { font-size: 24px !important; }
@@ -298,6 +299,15 @@
     .nx-mobile-menu a { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(245,240,232,0.1); color: #F5F0E8; font-weight: 900; font-size: 30px; letter-spacing: -0.04em; text-transform: uppercase; line-height: 1; }
     .nx-mobile-menu a span { font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #9BE8B4; }
 
+    /* What-we-do page: service blocks stack, image first */
+    .nx-svc { grid-template-columns: 1fr !important; }
+    .nx-svc-media { min-height: 380px !important; }
+  }
+  @media (min-width: 901px) {
+    .nx-svc-rev .nx-svc-media { order: 2; }
+  }
+
+  @media (max-width: 720px) {
     /* Hero */
     .nx-hero-inner { padding-top: 48px !important; padding-bottom: 48px !important; gap: 24px !important; }
     .nx-badge { font-size: 11px !important; letter-spacing: 0.12em !important; padding: 8px 12px !important; gap: 8px !important; }
@@ -337,6 +347,16 @@
     .nx-done { border-radius: 22px !important; padding: 18px 20px !important; font-size: 17px !important; }
     .nx-fineprint { padding-left: 4px !important; }
 
+    /* What we do (homepage teaser + page) */
+    .nx-service-card { min-height: 0 !important; border-radius: 20px !important; }
+    .nx-service-num { font-size: 52px !important; }
+    .nx-wide-cta { width: 100%; justify-content: center; }
+    .nx-cta-row a { flex: 1 1 100%; justify-content: center; }
+    .nx-svc { padding-top: 56px !important; padding-bottom: 56px !important; gap: 28px !important; }
+    .nx-svc-media { min-height: 260px !important; border-radius: 22px !important; }
+    .nx-svc-body { font-size: 20px !important; }
+    .nx-jump a { flex: 1 1 100%; justify-content: space-between; }
+
     /* Footer */
     .nx-footer-top { gap: 36px !important; }
     .nx-footer-bottom { flex-direction: column; gap: 8px !important; }
@@ -360,6 +380,7 @@
         <span style="width: 9px; height: 9px; border-radius: 50%; background: #9BE8B4; display: inline-block;"></span>
       </a>
       <nav class="nx-nav" style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 32px); flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.14em;">
+        <a class="nx-navlink" href="what-we-do.html" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">WHAT WE DO</a>
         <a class="nx-navlink" href="#event" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">NEXT EVENT</a>
         <a class="nx-navlink" href="#founders" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">FOUNDERS</a>
         <a class="nx-navlink" href="#moments" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">MOMENTS</a>
@@ -369,6 +390,7 @@
     </div>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <nav class="nx-mobile-menu" aria-label="Mobile">
+        <a href="what-we-do.html" sc-camel-on-click="{{ closeMenu }}">What we do <span>→</span></a>
         <a href="#event" sc-camel-on-click="{{ closeMenu }}">Next event <span>→</span></a>
         <a href="#founders" sc-camel-on-click="{{ closeMenu }}">Founders <span>→</span></a>
         <a href="#moments" sc-camel-on-click="{{ closeMenu }}">Moments <span>→</span></a>
@@ -562,10 +584,45 @@
     </div>
   </section>
 
+  <section id="what-we-do" data-screen-label="What we do" style="border-top: 1px solid rgba(245,240,232,0.1);">
+    <div style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 48px);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(32px, 5vw, 56px);">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.18em; color: #9BE8B4;">04 / WHAT WE DO</span>
+          <h2 style="margin: 0; font-weight: 900; font-size: clamp(44px, 7vw, 96px); line-height: 0.9; letter-spacing: -0.05em; text-transform: uppercase;">We make things <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.02em; color: #9BE8B4;">happen.</span></h2>
+        </div>
+        <p style="margin: 0; max-width: 460px; font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.25; color: rgba(245,240,232,0.8); text-wrap: pretty;">We turn bold ideas into unforgettable experiences, meaningful connections, and powerful content.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px;">
+          <a class="nx-service-card" href="what-we-do.html#startup-nights" style="display: flex; flex-direction: column; gap: 18px; min-height: 300px; padding: clamp(24px, 3vw, 36px); color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
+            <span class="nx-service-num" style="font-weight: 900; font-size: 72px; line-height: 0.8; letter-spacing: -0.06em; color: #9BE8B4;">01</span>
+            <span style="font-weight: 900; font-size: 30px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Startup Nights &amp; Connections</span>
+            <span style="font-family: 'Instrument Serif', serif; font-size: 21px; line-height: 1.25; color: rgba(245,240,232,0.78); text-wrap: pretty;">Where bold ideas meet the people who can make them happen.</span>
+            <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">LEARN MORE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
+          </a>
+          <a class="nx-service-card" href="what-we-do.html#corporate-events" style="display: flex; flex-direction: column; gap: 18px; min-height: 300px; padding: clamp(24px, 3vw, 36px); color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
+            <span class="nx-service-num" style="font-weight: 900; font-size: 72px; line-height: 0.8; letter-spacing: -0.06em; color: #9BE8B4;">02</span>
+            <span style="font-weight: 900; font-size: 30px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Corporate Events &amp; Experiences</span>
+            <span style="font-family: 'Instrument Serif', serif; font-size: 21px; line-height: 1.25; color: rgba(245,240,232,0.78); text-wrap: pretty;">Your next event deserves more than just a venue.</span>
+            <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">LEARN MORE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
+          </a>
+          <a class="nx-service-card" href="what-we-do.html#creative-content" style="display: flex; flex-direction: column; gap: 18px; min-height: 300px; padding: clamp(24px, 3vw, 36px); color: #F5F0E8; background: #141618; border: 1px solid rgba(245,240,232,0.12); border-radius: 24px;" style-hover="border-color: #9BE8B4; color: #F5F0E8;">
+            <span class="nx-service-num" style="font-weight: 900; font-size: 72px; line-height: 0.8; letter-spacing: -0.06em; color: #9BE8B4;">03</span>
+            <span style="font-weight: 900; font-size: 30px; line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase;">Creative Content &amp; Brand Growth</span>
+            <span style="font-family: 'Instrument Serif', serif; font-size: 21px; line-height: 1.25; color: rgba(245,240,232,0.78); text-wrap: pretty;">Don’t just make noise. Make an impact.</span>
+            <span style="margin-top: auto; padding-top: 10px; display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; letter-spacing: 0.14em; color: #F5F0E8;">LEARN MORE <span style="width: 36px; height: 36px; border-radius: 50%; background: #9BE8B4; color: #0A0B0C; display: inline-flex; align-items: center; justify-content: center; font-size: 16px;">→</span></span>
+          </a>
+      </div>
+      <div style="margin-top: 28px; display: flex;">
+        <a class="nx-wide-cta" href="what-we-do.html" style="display: inline-flex; align-items: center; gap: 12px; font-weight: 800; font-size: 17px; color: #0A0B0C; background: #9BE8B4; padding: 18px 28px; border-radius: 999px;" style-hover="background: #F5F0E8; color: #0A0B0C;">Discover what we do <span style="font-family: 'JetBrains Mono', monospace;">→</span></a>
+      </div>
+    </div>
+  </section>
+
   <section id="newsletter" data-screen-label="Newsletter" style="background: #9BE8B4; color: #0A0B0C;">
     <div style="max-width: 1360px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 40px; align-items: end;">
       <div style="display: flex; flex-direction: column; gap: 18px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.18em;">04 / STAY IN THE LOOP</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: 0.18em;">05 / STAY IN THE LOOP</span>
         <h2 style="margin: 0; font-weight: 900; font-size: clamp(44px, 7vw, 96px); line-height: 0.88; letter-spacing: -0.05em; text-transform: uppercase;">Be first <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -0.02em;">in line.</span></h2>
         <p style="margin: 0; max-width: 520px; font-family: 'Instrument Serif', serif; font-size: 24px; line-height: 1.25; text-wrap: pretty;">New events, founder line-ups and early tickets, straight to your inbox.</p>
       </div>
@@ -594,6 +651,7 @@
         <div style="display: flex; gap: clamp(40px, 6vw, 96px); flex-wrap: wrap;">
           <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; font-weight: 700;">
             <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #9BE8B4;">EXPLORE</span>
+            <a href="what-we-do.html" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">What we do</a>
             <a href="#event" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">Next event</a>
             <a href="#founders" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">Founders</a>
             <a href="#moments" style="color: #F5F0E8;" style-hover="color: #9BE8B4;">Moments</a>
@@ -617,6 +675,14 @@
 <script type="text/x-dc" data-dc-script="">
 class Component extends DCLogic {
   state = { email: '', submitted: false, menuOpen: false };
+  componentDidMount() {
+    // The page is rendered after load, so the browser can't jump to #section itself.
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const go = () => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' }); };
+    requestAnimationFrame(go);
+    setTimeout(go, 500);
+  }
   renderVals() {
     const founders = [
       { name: 'Dr. Rebekka Hofmann', company: 'CEO @ HLTHY', line: 'Turning smartwatch data into real preventive care.', img: './img/assets-speakers-rebekka.jpg', pos: '50% 20%', href: '#founders' },
