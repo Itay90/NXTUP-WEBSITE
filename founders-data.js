@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 //  NXTUP founders — the ONE place to edit founder content.
 //  Used by the homepage cards and by each founder page
-//  (founder.html?f=<slug>).
+//  (founder.html?f=<slug>) and the all-founders page (founders.html).
 //
 //  slug     – the page address, e.g. founder.html?f=viktor-redecker
 //  role     – small green line above the name
@@ -12,6 +12,10 @@
 //  bio      – paragraphs of text about the founder. Leave [] to hide
 //             the "About" section until the text is ready.
 //  website  – optional link, shown as a "Visit website" button.
+//
+//  ORDER: founders appear in the order of this list. The FIRST 4
+//  are the ones shown on the homepage; everyone appears on
+//  founders.html. Put a new founder at the top to feature them.
 //
 //  To add a founder: copy one { … } block, change the values,
 //  and put the photo in assets/img/.
