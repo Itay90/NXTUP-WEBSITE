@@ -289,6 +289,20 @@
   .nx-founders::-webkit-scrollbar { display: none; }
   section[id] { scroll-margin-top: 72px; }
 
+  /* Green marquee under the hero: two identical groups slide left forever */
+  .nx-marquee { background: #9BE8B4; color: #0A0B0C; overflow: hidden; border-top: 1px solid #0A0B0C; border-bottom: 1px solid #0A0B0C; padding: clamp(14px, 1.8vw, 22px) 0; user-select: none; }
+  .nx-mq-track { display: flex; width: max-content; animation: nx-marquee 70s linear infinite; will-change: transform; }
+  .nx-marquee:hover .nx-mq-track { animation-play-state: paused; }
+  .nx-mq-group { display: flex; align-items: center; flex-shrink: 0; gap: clamp(18px, 2.4vw, 36px); padding-right: clamp(18px, 2.4vw, 36px); white-space: nowrap; }
+  .nx-mq-bold { font-weight: 900; font-size: clamp(30px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.04em; text-transform: uppercase; }
+  .nx-mq-it { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: clamp(34px, 5vw, 72px); line-height: 1; letter-spacing: -0.02em; }
+  .nx-mq-star { font-size: clamp(16px, 2vw, 28px); line-height: 1; display: inline-block; animation: nx-spin 8s linear infinite; }
+  @keyframes nx-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes nx-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) {
+    .nx-mq-track, .nx-mq-star { animation: none; }
+  }
+
   @media (max-width: 900px) {
     /* Header: one compact row + dropdown menu */
     .nx-header-row { flex-wrap: nowrap !important; padding: 12px 20px !important; gap: 12px !important; }
@@ -432,10 +446,12 @@
     </div>
   </section>
 
-  <div style="background: #9BE8B4; color: #0A0B0C; overflow: hidden; border-bottom: 1px solid #0A0B0C;">
-    <div class="nx-ticker" style="max-width: 1360px; margin: 0 auto; padding: 16px clamp(20px, 4vw, 48px); display: flex; gap: 20px 36px; flex-wrap: wrap; align-items: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; letter-spacing: 0.16em;">
-      <span>NO FLUFF</span><span>✦</span><span>JUST STARTUPS</span><span>✦</span><span>REAL PITCHES</span><span>✦</span><span>REAL INVESTORS</span><span>✦</span><span>ZURICH</span>
+  <div class="nx-marquee" role="region" aria-label="No fluff, just startups. Real pitches, real investors. Zurich.">
+    <div class="nx-mq-track">
+      <div class="nx-mq-group"><span class="nx-mq-bold">No fluff</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">just startups</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Real pitches</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">real investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Zurich</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">founders × investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">No fluff</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">just startups</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Real pitches</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">real investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Zurich</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">founders × investors</span><span class="nx-mq-star">✦</span></div>
+      <div class="nx-mq-group" aria-hidden="true"><span class="nx-mq-bold">No fluff</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">just startups</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Real pitches</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">real investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Zurich</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">founders × investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">No fluff</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">just startups</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Real pitches</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">real investors</span><span class="nx-mq-star">✦</span><span class="nx-mq-bold">Zurich</span><span class="nx-mq-star">✦</span><span class="nx-mq-it">founders × investors</span><span class="nx-mq-star">✦</span></div>
     </div>
+  </div>
   </div>
 
   <section id="event" data-screen-label="Next event" style="max-width: 1360px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) clamp(20px, 4vw, 48px);">
